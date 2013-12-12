@@ -1,1 +1,14 @@
-{"repo_token":"xFJHIgPHuvq3d3hMdi92N3cmbw6WI4Kec","service_name":"travis-ci","environment":{},"git":{"head":{"id":"e78c040faf68d7383f1295c74ff5f0c2954caa6d","message":"include pom for coveralls.io jacoco coverage\n","author_name":"Christoph Mewes","author_email":"christoph.mewes@freiheit.com","committer_name":"Christoph Mewes","committer_email":"christoph.mewes@freiheit.com"},"branch":"master","remotes":[{"name":"origin","url":"http://github.com/sqlapi/sqlapi4j.git"},{"name":"upstream","url":"https://github.com/greenhornet/sqlapi4j.git"}]},"source_files":[]}
+{"repo_token":"xFJHIgPHuvq3d3hMdi92N3cmbw6WI4Kec",
+ "service_name":"travis-ci",
+ "environment":{},
+ "git":{
+     "head":{"id":"e78c040faf68d7383f1295c74ff5f0c2954caa6d",
+             "message":"include pom for coveralls.io jacoco coverage\n",
+             "author_name":"Christoph Mewes",
+             "author_email":"christoph.mewes@freiheit.com",
+             "committer_name":"Christoph Mewes",
+             "committer_email":"christoph.mewes@freiheit.com"},
+     "branch":"master",
+     "remotes":[{"name":"origin","url":"http://github.com/sqlapi/sqlapi4j.git"},
+                {"name":"upstream","url":"https://github.com/greenhornet/sqlapi4j.git"}]},
+ "source_files":[]}
