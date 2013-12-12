@@ -16,6 +16,10 @@ buildscript {
     }
 }
 
+tasks.withType(FindBugs){
+    ignoreFailures = true
+}
+
 subprojects { project ->
 
     // --------------------------------
@@ -29,8 +33,9 @@ subprojects { project ->
     apply plugin: 'java'
     apply plugin: 'jacoco'
     apply plugin: 'coveralls'
-//    apply plugin: 'checkstyle'
-//    apply plugin: 'findbugs'
+    apply plugin: 'checkstyle'
+    apply plugin: 'findbugs'
+    apply plugin: 'eclipse'
 
     dependencies {
         compile libraries.JSR305
@@ -68,6 +73,34 @@ subprojects { project ->
             csv.enabled false
             html.destination "${buildDir}/reports/coverage/"
         }
+    }
+
+    checkstyleMain {
+        ignoreFailures = true
+        configFile = file '../etc/development/checkstyle/checkstyle-5.0.xml'
+        doFirst {
+            configProperties = [samedir:"etc/development/checkstyle"]
+            checkstyleClasspath = files('../build-support/local-libs/JSR305CheckstylePlugin-0.4.0.jar', checkstyleClasspath)
+        }
+    }
+
+    checkstyleTest {
+        ignoreFailures = true
+        configFile = file '../etc/development/checkstyle/checkstyle-5.0.xml'
+        doFirst {
+            configProperties = [samedir:"etc/development/checkstyle"]
+            checkstyleClasspath = files('../build-support/local-libs/JSR305CheckstylePlugin-0.4.0.jar', checkstyleClasspath)
+        }
+    }
+
+    findbugsMain {
+        ignoreFailures = true
+        excludeFilter file("${project.rootDir}/etc/development/findbugs/excludes.xml")
+        effort = "max"
+    }
+
+    findbugsTest {
+        ignoreFailures = true
     }
 
     // host.properties generieren, setzt auch den targetHost auf project.targetHost

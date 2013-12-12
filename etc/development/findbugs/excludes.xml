@@ -1,0 +1,13 @@
+<FindBugsFilter>
+<!--     <Match>
+        Bsp. um einzelne Finbugs-Fehler auszuschalten.
+        <Class name="~com\.freiheit\.quotas\.XX.*Main"/>
+        <Bug pattern="DM_EXIT"/>
+    </Match>
+    <Match>
+        Bsp. um einzelne Finbugs-Fehler auszuschalten.
+        <Class name="com.freiheit.quotas.XX.MyClass" />
+        <Method name="testNoCopyAndPaste" />
+        <Bug pattern="DLS_DEAD_LOCAL_STORE" />
+    </Match> -->
+</FindBugsFilter>
