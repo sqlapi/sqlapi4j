@@ -125,101 +125,12 @@
     </module>
     <module name="ArrayTypeStyle"/>
     <module name="RegexpSinglelineJava">
-      <property name="format" value="com.freiheit.sqlapi4j.meta.ColumnDefs"/>
-      <property name="message" value="Please use QuotasColumnDefs"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value=" SequenceDef"/>
-      <property name="message" value="Please use SequenceSchemaDef"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value=" ColumnDefs."/>
-      <property name="message" value="Please use QuotasColumnDefs"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="ColumnDef.of"/>
-      <property name="message" value="Please use QuotasColumnDefs"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="ColumnDefNullable.of"/>
-      <property name="message" value="Please use QuotasColumnDefs"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="javax.inject.Inject"/>
-      <property name="message" value="Please use com.google.inject.Inject"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="javax.inject.Provider"/>
-      <property name="message" value="Please use com.google.inject.Provider"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="javax.inject.Singleton"/>
-      <property name="message" value="Please use com.google.inject.Singleton"/>
-    </module>
-    <module name="RegexpSinglelineJava">
       <property name="format" value="^.*[\p{Alnum}{}]+.*\s+$"/>
       <property name="message" value="Line has trailing whitespace."/>
     </module>
     <module name="EqualsAvoidNull">
     </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="[^&quot;]\s*\.equals\s*\(\s*&quot;"/>
-      <property name="message" value="Um NPEs zu vermeiden, bitte immer den String auf Gleichheit mit dem Objekt prüfen, nicht umgekehrt, z. B: &quot;foo&quot;.equals(bar)"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="request.getSession().setAtt"/>
-      <property name="message" value="use session registry"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="session.setAtt"/>
-      <property name="message" value="use session registry"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="java.util.Date"/>
-      <property name="message" value="use joda DateTime"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value=" DateTime\(\)"/>
-      <property name="message" value="inject a Clock and use that instead"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value=" LocalDate\(\)"/>
-      <property name="message" value="inject a Clock and do: new LocalDate(_clock.getCurrentTime())"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value=" AlphaSync\(\)"/>
-      <property name="message" value="inject a AlphaSyncSoap and use that instead"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="java.util.Calendar"/>
-      <property name="message" value="use joda DateTime"/>
-    </module>
     <module name="InterfaceIsType"/>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="System\.out\.print"/>
-      <property name="message" value="System.out.print[ln] ist verboten. Ausgaben bitte via Logging"/>
-      <property name="ignoreCase" value="true"/>
-      <property name="ignoreComments" value="true"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="System\.err\.print"/>
-      <property name="message" value="System.err.print[ln] ist verboten. Ausgaben bitte via Logging"/>
-      <property name="ignoreCase" value="true"/>
-      <property name="ignoreComments" value="true"/>
-      <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Ausgaben bitte via Logging"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="System\.gc"/>
-      <property name="message" value="System.gc() hat keinen Effekt. Die JVM weiss selbst wann der Garbage Collector laufen sollte."/>
-      <property name="ignoreCase" value="true"/>
-      <property name="ignoreComments" value="true"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="^printStackTrace\(\)$"/>
-      <property name="message" value="printStackTrace() ist verboten. Informationen zu Exceptions bitte mittels Logging erfassen. Vergl. JavaStyleGuide [LOGEXC]"/>
-      <property name="ignoreCase" value="true"/>
-      <property name="ignoreComments" value="true"/>
-    </module>
     <module name="DeclarationOrder">
     </module>
     <module name="FinalClass">
@@ -235,72 +146,10 @@
     <module name="IllegalThrows">
       <property name="illegalClassNames" value="java.lang.Throwable, java.lang.Error, java.lang.Exception, java.lang.RuntimeException"/>
     </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="throw\s+new\s+((Runtime)?Exception|Throwable|Error)\W"/>
-      <property name="message" value="Bitte spezifische Exceptions werfen!"/>
-      <property name="ignoreComments" value="true"/>
-    </module>
     <module name="ModifierOrder"/>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="\borg\.apache\.commons\.logging"/>
-      <property name="message" value="Bitte zum Loggen org.slf4j.Logger nutzen"/>
-      <property name="ignoreComments" value="true"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="\bcom\.ibatis\.commons\.logging"/>
-      <property name="message" value="Bitte zum Loggen org.slf4j.Logger nutzen"/>
-      <property name="ignoreComments" value="true"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="\bjava\.util\.logging\."/>
-      <property name="message" value="Bitte zum Loggen org.slf4j.Logger nutzen"/>
-      <property name="ignoreComments" value="true"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="\borg\.apache\.commons\.lang\."/>
-      <property name="message" value="Bitte die Guava utils nutzen"/>
-      <property name="ignoreComments" value="true"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="\borg\.apache\.log4j\."/>
-      <property name="message" value="Bitte zum Loggen org.slf4j.Logger nutzen"/>
-      <property name="ignoreComments" value="true"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="\borg\.testng\.log4testng\."/>
-      <property name="message" value="Bitte zum Loggen org.slf4j.Logger nutzen"/>
-      <property name="ignoreComments" value="true"/>
-    </module>
     <module name="HideUtilityClassConstructor"/>
     <module name="JavaNCSS">
       <property name="methodMaximum" value="25"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="new\s++AttributeAppender\s*+\(\s*+&quot;class&quot;"/>
-      <property name="message" value="Use CssClassAppender instead"/>
-      <property name="ignoreComments" value="true"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="(?&lt;!HeaderResponseUtil)\.renderOnDomReadyJavaScript\("/>
-      <property name="message" value="Bitte HeaderResponseUtil.renderOnDomReadyJavaScript() verwenden."/>
-      <property name="ignoreComments" value="true"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="(?&lt;!Quotas)MediaType\."/>
-      <property name="message" value="Bitte QuotasMediaType verwenden (und ggf. mit korrektem Encoding ergänzen)."/>
-      <property name="ignoreComments" value="true"/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="[tT][oO][dD][oO](?! \([a-zA-Z, ]+\))"/>
-      <property name="message" value="Bitte TODO in der Form TODO (DeV1,DEv2): ... verwenden."/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="[fF][iI][xX][mM][eE](?! \([a-zA-Z, ]+\))"/>
-      <property name="message" value="Bitte FIXME in der Form FIXME (DeV1,DEv2): ... verwenden."/>
-    </module>
-    <module name="RegexpSinglelineJava">
-      <property name="format" value="\@Context[ \t]+\@Nonnull"/>
-      <property name="message" value="Bitte @Nonnull @Context verwenden (Jersey bug)."/>
     </module>
   </module>
   <module name="Translation"/>
@@ -308,10 +157,6 @@
     <property name="eachLine" value="true"/>
     <property name="fileExtensions" value="java"/>
   </module-->
-  <module name="RegexpMultiline">
-    <property name="format" value="/\*\*[*\s\n]*@author"/>
-    <property name="message" value="Jede Klasse [Top Level Java  Klasse; ausgenommen sind innere und anonyme Klassen] muss eine  kurze Beschreibung (einen Satz) ihrer Aufgabe enthalten."/>
-  </module>
   <module name="SuppressionCommentFilter">
     <property name="offCommentFormat" value="CHECKSTYLE\:\s*OFF\s*"/>
     <property name="onCommentFormat" value="CHECKSTYLE\:\s*ON\s*"/>
