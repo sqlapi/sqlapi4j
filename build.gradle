@@ -6,11 +6,7 @@ task wrapper(type: Wrapper) {
     gradleVersion = '1.9'
 }
 
-// dependencies {
-//     jacoco libraries.JACOCO
-// }
-
-allprojects { project ->
+subprojects { project ->
 
     // --------------------------------
     // Increment version for deployment
@@ -21,9 +17,9 @@ allprojects { project ->
     apply plugin: 'eclipse'
     apply plugin: 'idea'
     apply plugin: 'java'
+    apply plugin: 'jacoco'
 //    apply plugin: 'checkstyle'
 //    apply plugin: 'findbugs'
-    apply plugin: 'jacoco'
 
     dependencies {
         compile libraries.JSR305
@@ -31,8 +27,8 @@ allprojects { project ->
         compile libraries.SLF4J_API
 
         testCompile libraries.TESTNG
+        testRuntime libraries.H2
     }
-
 
     repositories {
         maven { url 'http://repo1.maven.org/maven2/' }
@@ -46,6 +42,20 @@ allprojects { project ->
             maven { url 'http://repo1.maven.org/maven2/' }
             maven { url 'http://www.ibiblio.org/maven2/' }
             maven { url "${project.rootDir}/build-support/local-libs/repository" }
+        }
+    }
+
+    test {
+        useTestNG()
+    }
+
+    jacocoTestReport {
+        group = "Verification"
+        description = "Generate Jacoco coverage reports after running tests."
+         reports {
+            xml.enabled true
+            csv.enabled false
+            html.destination "${buildDir}/reports/coverage/"
         }
     }
 

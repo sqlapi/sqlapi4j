@@ -18,7 +18,7 @@ AOP_ALLIANCE : 'aopalliance:aopalliance:1.0',
 JSR305 : 'com.google.code.findbugs:jsr305:1.3.9',
 
 C3P0 : 'c3p0:c3p0:0.9.1.2',
-H2 : 'com.h2database:h2:jar:1.3.158',
+H2 : 'com.h2database:h2:1.3.158',
 POSTGRES : 'postgresql:postgresql:8.3-603.jdbc4',
 
 GUAVA : 'com.google.guava:guava:14.0.1',
