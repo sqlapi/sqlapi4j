@@ -1,0 +1,10 @@
+dependencies {
+    compile project(':core')
+    compile project(':domain')
+
+    testCompile project(':core').sourceSets.test.output
+    testRuntime project(':core').sourceSets.test.resources
+    //compile project(':domain')
+
+    //testCompile libraries.H2
+}

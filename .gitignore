@@ -3,5 +3,16 @@
 /*/.project
 /*/.settings/
 /*/target/
+/*/build/
 reports/
 .buildr.rb
+.idea
+.gradle
+
+*.class
+
+build-support/build-support/
+build-support/gradle/wrapper/archive/
+build-support/gradle/wrapper/distribution/
+build-support/gradle/gradle-home/
+build-support/gradle/wrapper/wrapper.properties

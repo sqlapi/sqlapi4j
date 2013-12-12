@@ -1,0 +1,70 @@
+apply from: 'build-support/gradle/libs.gradle'
+
+apply plugin: 'base'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.9'
+}
+
+// dependencies {
+//     jacoco libraries.JACOCO
+// }
+
+allprojects { project ->
+
+    // --------------------------------
+    // Increment version for deployment
+    // --------------------------------
+
+    version = '0.0.1-SNAPSHOT'
+
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
+    apply plugin: 'java'
+//    apply plugin: 'checkstyle'
+//    apply plugin: 'findbugs'
+    apply plugin: 'jacoco'
+
+    dependencies {
+        compile libraries.JSR305
+        compile libraries.POSTGRES
+        compile libraries.SLF4J_API
+
+        testCompile libraries.TESTNG
+    }
+
+
+    repositories {
+        maven { url 'http://repo1.maven.org/maven2/' }
+        maven { url 'http://www.ibiblio.org/maven2/' }
+        maven { url "${project.rootDir}/build-support/local-libs/repository" }
+        flatDir { dirs "${project.rootDir}/build-support/local-libs/" }
+    }
+
+    buildscript {
+        repositories {
+            maven { url 'http://repo1.maven.org/maven2/' }
+            maven { url 'http://www.ibiblio.org/maven2/' }
+            maven { url "${project.rootDir}/build-support/local-libs/repository" }
+        }
+    }
+
+    // host.properties generieren, setzt auch den targetHost auf project.targetHost
+    //task(generateProperties, type: com.freiheit.quotas.buildsupport.GeneratePropertiesTask) {}
+
+    // test.properties generieren, setzt auch den targetHost auf project.targetHost
+    // task(generateTestProperties, type: com.freiheit.quotas.buildsupport.GeneratePropertiesTask) { //
+    //     type = 'test'
+    // }
+
+    // // host.properties laden damit sie in gradle verfügbar sind
+    // task(loadProperties, type: com.freiheit.quotas.buildsupport.LoadPropertiesTask) {
+    //     dependsOn generateProperties
+    // }
+
+    // // test.properties laden damit sie in gradle verfügbar sind
+    // task(loadTestProperties, type: com.freiheit.quotas.buildsupport.LoadPropertiesTask) {
+    //     dependsOn generateTestProperties
+    //     type = 'test'
+    // }
+}
